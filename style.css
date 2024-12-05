@@ -1,0 +1,1082 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Styles */
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+body {
+  width: 100%;
+}
+
+.logo {
+  width: 150px; /* adjust to desired width */
+  height: auto; /* keep the aspect ratio intact */
+  border-radius: 1000px;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 80px;
+  background: #333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Style for the navbar */
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  display: flex;  /* Use flexbox to align items horizontally */
+}
+
+/* Style for list items (li) inside navbar */
+#navbar li {
+  position: relative;  /* Position relative to handle dropdown */
+}
+
+/* Style for the links inside navbar */
+#navbar li a, .dropbtn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Hover effect for links */
+#navbar li a:hover, .dropdown:hover .dropbtn {
+  background-color: #111;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content li {
+  display: block;
+}
+
+/* Links inside dropdown hover effect */
+.dropdown-content li a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Change color on hover for dropdown links */
+.dropdown-content li a:hover {
+  background-color: #111;
+}
+
+/* Show the dropdown when hovering over the dropdown menu */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#hero {
+  background-image: url('bg.jpg');
+  height: 93vh;
+  width: 100%;
+  background-size: contain;   /* Adjust to show the full image */
+  background-position: right;  /* Ensure the image is centered */
+  background-repeat: no-repeat;  /* Prevent tiling if image is smaller than container */
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative; /* This is necessary for absolute positioning */
+}
+
+.home-img {
+  position: absolute;  /* Absolute positioning to stack on top of the background */
+  top: 48%;  /* Adjust this to position the tumbler image vertically */
+  right: 82%;  /* Move the image to the right side */
+  width: 60%;  /* Adjust the width to your preference */
+  max-width: 200px;  /* Optional: limit the maximum size of the tumbler image */
+}
+
+.home-img img {
+  width: 50%; /* Ensures the tumbler image fills the container width */
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-11px, 0);
+  }
+  50% {
+    transform: translate(-0px, -11px);
+  }
+  100% {
+    transform: translate(-11px, 0);
+  }
+}
+/* Container for the trending product section */
+.trending-product {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Centering the heading */
+.center-text h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.center-text h2 span {
+  color: #ff6347; /* Tomato color for emphasis */
+}
+
+/* Styling the product cards */
+/* Layout for product grid */
+/* General layout for the products container */
+.products .row {
+  display: flex; /* Using flexbox to align the items in a row */
+  justify-content: space-between; /* Space the products evenly */
+  gap: 20px; /* Space between each product */
+  flex-wrap: nowrap; /* Prevent wrapping to the next line */
+  overflow: hidden; /* Ensure products don't overflow on smaller screens */
+}
+
+/* Product card styling */
+.product-card {
+  width: 23%; /* Adjust width to fit 4 cards in a row (100% / 4 cards = 25% each, 23% leaves some gap) */
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Lift the card when hovered */
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures image is covered */
+  object-position: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Sale tag styling */
+.product-text h5 {
+  font-size: 16px;
+  background-color: #ff6347;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+/* Heart icon styling */
+.heart-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.heart-icon i {
+  font-size: 20px;
+  color: #ff6347;
+}
+
+/* Rating stars styling */
+.rating {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.rating i {
+  color: #ffd700;
+  font-size: 18px;
+}
+
+/* Price section */
+.price {
+  padding: 20px;
+  text-align: center;
+}
+
+.price h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.price p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .product-card {
+    width: 48%; /* 2 products per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: 100%; /* 1 product per row on mobile */
+  }
+}
+
+
+  .products img {
+    max-width: 80%;
+  }
+
+/* General Styling for Trending Section */
+.trending-product {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Centering the heading */
+.center-text h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.center-text h2 span {
+  color: #ff6347; /* Tomato color for emphasis */
+}
+
+/* General layout for the products container */
+.products .row {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space the products evenly */
+  gap: 15px; /* Small gap between product boxes */
+  flex-wrap: nowrap; /* Ensure all 4 products stay in a single row */
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  text-align: center;
+  width: 300px; /* Fixed width */
+  height: 350px; /* Fixed height */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Lift the card when hovered */
+}
+
+
+.product-card img {
+  width: 50%; /* Ensures the image fills the width of the card */
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-position: center; /* Ensures the image is centered */
+  border-radius: 8px; /* Optional: rounded corners for images */
+  margin: 0 auto; /* Centers the image horizontally within the card */
+}
+/* Sale tag styling */
+.product-text h5 {
+  font-size: 16px;
+  background-color: #ff6347;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+/* Heart icon styling */
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.heart-icon i {
+  font-size: 20px;
+  color: #ff6347;
+}
+
+/* Rating stars styling */
+.rating {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.rating i {
+  color: #ffd700;
+  font-size: 18px;
+}
+
+/* Price section */
+.price {
+  padding: 15px;
+  text-align: center;
+}
+
+.price h4 {
+  font-size: 18px; /* Slightly smaller for better fit */
+  font-weight: bold;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.price p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .product-card {
+    width: 48%; /* 2 products per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: 100%; /* 1 product per row on mobile */
+  }
+}
+
+/* FOOTER*/
+/* General Footer Styles */
+.footer {
+  background-color: black; /* Deep blue background */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Waves Container */
+.waves {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -7px; /* To overlap with the footer */
+  min-height: 80px;
+  max-height: 150px;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat-x;
+  background-size: 50% 100%;
+  opacity: 0.7;
+  bottom: 0;
+  animation: animateWave 4s linear infinite;
+}
+
+#wave1 {
+  background-image: url('https://www.svgrepo.com/show/117309/wave.svg');
+  z-index: 100;
+  animation-delay: 0s;
+}
+
+#wave2 {
+  background-image: url('https://www.svgrepo.com/show/117309/wave.svg');
+  z-index: 99;
+  opacity: 0.5;
+  animation-delay: -1s;
+}
+
+#wave3 {
+  background-image: url('https://www.svgrepo.com/show/117309/wave.svg');
+  z-index: 98;
+  opacity: 0.3;
+  animation-delay: -2s;
+}
+
+#wave4 {
+  background-image: url('https://www.svgrepo.com/show/117309/wave.svg');
+  z-index: 97;
+  opacity: 0.1;
+  animation-delay: -3s;
+}
+
+@keyframes animateWave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Social Icons */
+.social-icon {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon__item {
+  display: inline-block;
+}
+
+.social-icon__link {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon__link:hover {
+  transform: scale(1.2);
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu__item {
+  display: inline-block;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.menu__link:hover {
+  color: #ffab00; /* Highlight color */
+}
+
+/* Footer Text */
+.footer p {
+  margin: 15px 0 0;
+  font-size: 14px;
+}
+
+/*FOR ADD SECTION*/
+
+/* General Styles */
+.offer {
+  background-color: #d9f0ff; /* Light blue background */
+  width: 1400px; /* Fixed width */
+  height: 500px; /* Fixed height */
+  margin: 50px auto; /* Center align */
+  border-radius: 10px; /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.small-container {
+  text-align: center; /* Center align content */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Column Styles */
+.col-2 {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.col-2 img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Text Content */
+.offer h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.offer p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.offer .btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #007bff; /* Blue button */
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.offer .btn:hover {
+  background-color: #0056b3;
+}
+
+.offer-img {
+  width: 40%; /* or any specific value like 300px */
+  height: auto; /* to maintain aspect ratio */
+  margin-left: 200px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/*FOR REVIEW*/
+
+/* Container for the entire review section */
+.review-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 1100px; /* Increased max-width for more space */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2em;
+  color: #333;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of items on small screens */
+  gap: 20px; /* Space between review boxes */
+  justify-content: space-between; /* Distribute space evenly */
+}
+
+.review-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 calc(33.333% - 20px); /* 3 boxes per row, with a gap of 20px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.review-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.user-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.review-date {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 1.2em;
+  color: #FFD700; /* Golden stars */
+}
+
+.star:last-child {
+  color: #ccc; /* Empty star */
+}
+
+.review-text {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .review-box {
+    flex: 1 1 calc(50% - 20px); /* 2 boxes per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .review-box {
+    flex: 1 1 100%; /* 1 box per row on small screens */
+  }
+}
+
+
+#navbar  {
+  bottom: 1;
+}
+#christmas-banner {
+  background-color: red;  /* Red background */
+  padding: 3px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;  /* White text color */
+}
+
+.blinking-text {
+  animation: blink 2s infinite step-start; /* Slow blink effect for the text */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+/* Carousel container styling */
+.carousel-container {
+  position: relative;
+  width: 100%;  /* The carousel will be responsive and take full width */
+  max-width: 1550px;  /* Optional: set a maximum width for larger screens */
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Header image styling */
+.header-image {
+  position: absolute;
+  top: 50%; /* Centers the image vertically */
+  left: 50%; /* Centers the image horizontally */
+  transform: translate(-50%, -50%); /* Adjusts the image to be exactly at the center */
+  z-index: 10;  /* Ensures the header image appears above the carousel */
+  width: 80%; /* You can adjust this width as needed */
+  max-width: 1000px;  /* Optional max width to prevent it from getting too large */
+  height: auto;  /* Adjust height based on width to maintain aspect ratio */
+}
+
+.header-image img {
+  width:100%;  /* Make the header image responsive */
+  height: auto;  /* Keep the aspect ratio intact */
+  object-fit: cover;  /* Cover the area without distortion */
+}
+
+/* Carousel itself */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;  /* Smooth transition for sliding effect */
+}
+
+/* Each carousel item */
+.carousel-item {
+  min-width: 100%;  /* Each item takes up 100% of the carousel container width */
+  height: 600px;  /* Set a fixed height or use auto depending on your layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%; /* Make the image fill the container */
+  height: 100%; /* Stretch image to cover the carousel item's height */
+  object-fit: cover;  /* Ensures the image covers the container without distortion */ 
+}
+.carousel img, .carousel-item img {
+  opacity: 0.2; /* Set opacity for the image only */
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item {
+  background-color: rgba(0, 0, 0, 0.9); /* Set opacity for the background */
+}
+
+/* Style for the dropdown container */
+.dropdown {
+  position: relative; /* Ensure it's positioned in the normal document flow */
+}
+
+/* Style for the dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute; /* Position the dropdown menu relative to the .dropdown container */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999; /* Ensure it appears in front of other elements */
+}
+
+/* Show the dropdown content when hovering over the dropdown */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: Style the dropdown button */
+.dropbtn {
+  background-color: #333;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Optional: Hover effects for the dropdown items */
+.dropdown-content li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+
+
+/* Snowflake styles (unchanged) */
+.snowflake {
+  position: absolute;
+  color: #fff;
+  font-size: 50px; /* Larger snowflake size */
+  opacity: 0.8;
+  user-select: none;
+  z-index: 5;
+  animation: snow 15s infinite;
+}
+
+@keyframes snow {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(var(--x), var(--y)); }
+}
+
+.snowflake.left { top: 0; left: 0; }
+.snowflake.right { top: 0; right: 0; }
+.snowflake.left:nth-child(1) { animation-delay: 0s; --x: 150px; --y: 100vh; }
+.snowflake.left:nth-child(2) { animation-delay: 1s; --x: 100px; --y: 120vh; }
+.snowflake.left:nth-child(3) { animation-delay: 2s; --x: 200px; --y: 130vh; }
+.snowflake.left:nth-child(4) { animation-delay: 3s; --x: 120px; --y: 140vh; }
+.snowflake.left:nth-child(5) { animation-delay: 4s; --x: 180px; --y: 150vh; }
+.snowflake.left:nth-child(6) { animation-delay: 5s; --x: 250px; --y: 160vh; }
+
+.snowflake.right:nth-child(7) { animation-delay: 0s; --x: -150px; --y: 100vh; }
+.snowflake.right:nth-child(8) { animation-delay: 1s; --x: -100px; --y: 120vh; }
+.snowflake.right:nth-child(9) { animation-delay: 2s; --x: -200px; --y: 130vh; }
+.snowflake.right:nth-child(10) { animation-delay: 3s; --x: -120px; --y: 140vh; }
+.snowflake.right:nth-child(11) { animation-delay: 4s; --x: -180px; --y: 150vh; }
+.snowflake.right:nth-child(12) { animation-delay: 5s; --x: -250px; --y: 160vh; }
+
+/* Style the row to use CSS Grid */
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 20px; /* Space between product cards */
+  margin-bottom: 30px; /* Optional: space between rows */
+}
+
+/* Optional: Make the product card responsive */
+.product-card {
+  background: #fff; /* Optional: your card background color */
+  border: 1px solid #ddd; /* Optional: border style */
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Adjust the card for smaller screens (example for tablet or mobile) */
+@media (max-width: 1024px) {
+  .products .row {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .products .row {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .products .row {
+    grid-template-columns: 1fr; /* 1 item per row on very small screens */
+  }
+}
+
+img{
+  width: 100%;
+  display: block;
+}
+.main-wrapper{
+  min-height: 100vh;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.product-div{
+  margin: 1rem 0;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: pink;
+  border-radius: 3px;
+  column-gap: 10px;
+}
+.product-div-left{
+  padding: 20px;
+}
+.product-div-right{
+  padding: 20px;
+}
+.img-container img{
+  width: 200px;
+  margin: 0 auto;
+}
+.hover-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+.hover-container div{
+  border: 2px solid rgba(252, 160, 175, 0.7);
+  padding: 1rem;
+  border-radius: 3px;
+  margin: 0 4px 8px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.active{
+  border-color: rgb(255, 145, 163)!important;
+}
+.hover-container div:hover{
+  border-color: rgb(255, 145, 163);
+}
+.hover-container div img{
+  width: 50px;
+  cursor: pointer;
+}
+.product-div-right span{
+  display: block;
+}
+.product-name{
+  font-size: 26px;
+  margin-bottom: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+.product-price{
+  font-weight: 700;
+  font-size: 24px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+.product-rating{
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+.product-rating span{
+  margin-right: 6px;
+}
+.product-description{
+  font-weight: 18px;
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-top: 22px;
+}
+.btn-groups{
+  margin-top: 22px;
+}
+.btn-groups button{
+  display: inline-block;
+  font-size: 16px;
+  font-family: inherit;
+  text-transform: uppercase;
+  padding: 15px 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-groups button .fas{
+  margin-right: 8px;
+}
+.add-cart-btn{
+  background-color: #FF9F00;
+  border: 2px solid #FF9F00;
+  margin-right: 8px;
+}
+.add-cart-btn:hover{
+  background-color: #fff;
+  color: #FF9F00;
+}
+.buy-now-btn{
+  background-color: #000;
+  border: 2px solid #000;
+}
+.buy-now-btn:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+@media screen and (max-width: 992px){
+  .product-div{
+      grid-template-columns: 100%;
+  }
+  .product-div-right{
+      text-align: center;
+  }
+  .product-rating{
+      justify-content: center;
+  }
+  .product-description{
+      max-width: 400px;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .btn-groups button{
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+
+
+
+
